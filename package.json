@@ -1,0 +1,26 @@
+{
+  "name": "blogwebapp-mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon api/index.js",
+    "start": "node api.index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShibuJoseph18/BlogWebApp-MERN.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShibuJoseph18/BlogWebApp-MERN/issues"
+  },
+  "homepage": "https://github.com/ShibuJoseph18/BlogWebApp-MERN#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  },
+  "type": "module"
+}
