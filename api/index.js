@@ -13,11 +13,11 @@ mongoose
         console.log("MongoDB Connected");
     })
     .catch((error) => {
-        console.log(`Database Connection-${error}`);
+        console.log(`Database Connection${error}`);
     });
 
 
 
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}!!`);
+    console.log(`Server running on http://localhost:${port}`);
 })
