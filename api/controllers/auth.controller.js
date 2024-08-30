@@ -1,14 +1,15 @@
 import User from "../model/user.model.js";
 import brcypt from "bcrypt";
+import { errorHandler } from "../utils/error.js";
 
-export const signup = async (req, res) => {
+export const signup = async (req, res, next) => {
     console.log(req.body);
     const {username, email, password} = req.body;
     console.log(username, email, password);
 
 
     if(!username.trim() || !email.trim() || !password.trim()) {
-        return res.status(400).json({message: "All fields required"});
+        return next(errorHandler(400, "All fields are required"));
     }
 
     const hashPassword = brcypt.hashSync(password, 10);
@@ -25,7 +26,7 @@ export const signup = async (req, res) => {
 
 
     } catch (error) {
-        return res.status(500).json({message: error});
+        return next(error);
     }
 
 
