@@ -24,7 +24,7 @@ export default function Header() {
         <Button className='w-12 h-10 lg:hidden' color='gray' pill>
           <AiOutlineSearch/> 
         </Button>
-        <div className='flex gap-2 md:order-2'    >
+        <div className='flex gap-2 md:order-2' >
           <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
             <FaMoon />
           </Button> 
@@ -43,10 +43,7 @@ export default function Header() {
           <Navbar.Link active={path === '/Project'} as={'div'}>
             <Link to="/Project">Project</Link>
           </Navbar.Link>
-        </Navbar.Collapse>
-        
+        </Navbar.Collapse> 
     </Navbar>
-
-
   )
 }

@@ -27,15 +27,16 @@ app.use("/api/user", userRoutes);
 app.use("/api/auth", signUp);
 
 app.use((err, req, res, next) => {
+    console.log("error",req.body);
     const statusCode = err.statusCode || 500;
-    const message = err.message || 'Internal Server Error'
+    const message = err.message || 'Internal Server Error';
     res.status(statusCode).json({
         success: false,
         statusCode,
         message,
-    })
-})
+    });
+});
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
-})
+});

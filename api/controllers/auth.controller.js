@@ -3,6 +3,7 @@ import brcypt from "bcrypt";
 import { errorHandler } from "../utils/error.js";
 
 export const signup = async (req, res, next) => {
+
     console.log(req.body);
     const {username, email, password} = req.body;
     console.log(username, email, password);
@@ -23,12 +24,8 @@ export const signup = async (req, res, next) => {
     try {
         await newUser.save();
         return res.status(200).json("SignIn Successfull");
-
-
     } catch (error) {
         return next(error);
     }
-
-
-
+    
 }
