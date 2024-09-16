@@ -10,6 +10,13 @@ dotenv.config();
 const app = express();
 const port = 3000;
 
+// app.use() - If route is not mentioned, the middleware functions is applied to all routes.
+
+// express.json() - It converts raw json that comes request from the browser to js objects 
+// and add a property called 'body' that can be interpreted by the routes using 'req.body'.
+
+// While handling middlewares position is important, Since we need the body property
+// to use in routes and the middleware is responsible for it, we need declare the middle before the routes.
 app.use(express.json());
 
 mongoose
@@ -24,7 +31,7 @@ mongoose
 
 
 app.use("/api/user", userRoutes);
-app.use("/api/auth", signUp);
+app.use("/api/auth", signUp); // It provides the base path for signUp route
 
 app.use((err, req, res, next) => {
     console.log("error",req.body);
@@ -36,6 +43,8 @@ app.use((err, req, res, next) => {
         message,
     });
 });
+
+
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);

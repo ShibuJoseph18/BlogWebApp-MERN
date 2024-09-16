@@ -1,5 +1,4 @@
 import { Navbar, TextInput, Button } from 'flowbite-react';
-import React from 'react';
 import { Link , useLocation} from 'react-router-dom';
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon } from "react-icons/fa";
@@ -47,3 +46,4 @@ export default function Header() {
     </Navbar>
   )
 }
+

@@ -2,6 +2,8 @@ import User from "../model/user.model.js";
 import brcypt from "bcrypt";
 import { errorHandler } from "../utils/error.js";
 
+
+
 export const signup = async (req, res, next) => {
 
     console.log(req.body);
@@ -9,7 +11,7 @@ export const signup = async (req, res, next) => {
     console.log(username, email, password);
 
 
-    if(!username.trim() || !email.trim() || !password.trim()) {
+    if(!username || !email || !password) {
         return next(errorHandler(400, "All fields are required"));
     }
 
